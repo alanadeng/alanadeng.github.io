@@ -14,6 +14,7 @@ body {
     color: #333;
     line-height: 1.6;
     font-size: clamp(1rem, 1.5vw, 1.125rem);
+    overflow-x: hidden;
 }
 
 a {
@@ -44,6 +45,7 @@ nav {
     padding: 0.75rem 1rem;
     border-radius: 10px;
     margin-bottom: 2rem;
+    overflow-x: auto;
 }
 
 .nav-menu {
@@ -51,25 +53,26 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     list-style: none;
-    gap: 1.5rem;
     padding: 0;
     margin: 0;
+    gap: 1rem;
 }
 
 .nav-menu li {
     position: relative;
+    flex-shrink: 0;
 }
 
 .nav-menu li a {
     color: white;
-    text-decoration: none;
     font-weight: 700;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 4vw, 1.4rem);
     padding: 0.5rem 1rem;
     display: block;
+    white-space: nowrap;
 }
 
-/* DROPDOWN */
+/* DROPDOWN MENU */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -79,7 +82,9 @@ nav {
     padding: 0.5rem 0;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    min-width: 200px;
+    min-width: max-content;
+    max-width: 90vw;
+    overflow-x: hidden;
     z-index: 999;
 }
 
@@ -147,7 +152,7 @@ p {
     margin-bottom: 1rem;
 }
 
-/* BUTTONS */
+/* BUTTON */
 button {
     padding: 0.75rem 1.5rem;
     font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -171,12 +176,11 @@ button:hover {
     margin-right: 8px;
 }
 
-/* RESPONSIVE NAVIGATION ON SMALL SCREENS */
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 768px) {
     .nav-menu {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0;
     }
 
     .nav-menu li {
@@ -185,14 +189,15 @@ button:hover {
 
     .dropdown-menu {
         position: static;
-        background-color: transparent;
         box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
         padding-left: 1rem;
     }
 
     .dropdown-menu li a {
+        color: white;
         padding: 0.25rem 0;
-        color: #fff;
     }
 
     .dropdown:hover .dropdown-menu {
