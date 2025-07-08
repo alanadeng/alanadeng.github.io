@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownMenu.classList.toggle("open");
   });
 
-  // Close dropdown if clicking elsewhere
   document.addEventListener("click", function (e) {
     if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
       dropdownMenu.classList.remove("open");
