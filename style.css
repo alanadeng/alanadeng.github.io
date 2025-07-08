@@ -204,3 +204,25 @@ button:hover {
         width: 100%;
     }
 }
+
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    h1, h2 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
