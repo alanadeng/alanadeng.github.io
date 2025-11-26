@@ -1,19 +1,24 @@
+// Function to show/hide contact info
 function showContact() {
     const contact = document.getElementById("contact-info");
-    contact.style.display = contact.style.display === "none" ? "block" : "none";
+    // Use classList.toggle for smoother transitions (if defined in CSS)
+    contact.classList.toggle("visible"); 
 }
 
+// Function to toggle the navigation dropdown menu
 function toggleDropdown() {
   const dropdown = document.getElementById("dropdownMenu");
-  dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+  // Use classList.toggle for the dropdown visibility
+  dropdown.classList.toggle("open");
 }
 
-
+// Click listener to close dropdown when clicking outside
 document.addEventListener('click', function(event) {
     const dropdown = document.getElementById("dropdownMenu");
-    const moreBtn = event.target.closest('a');
-
-    if (!event.target.closest('.dropdown') && dropdown.style.display === 'block') {
-        dropdown.style.display = 'none';
+    const dropdownContainer = event.target.closest('.dropdown');
+    
+    // Check if the click is outside the dropdown container AND the dropdown is open
+    if (dropdown && !dropdownContainer && dropdown.classList.contains('open')) {
+        dropdown.classList.remove('open');
     }
 });

@@ -6,24 +6,43 @@
     <title>Alana Deng</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add CSS to support the contact dynamic change */
+        #contact-info {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+        }
+
+        #contact-info.visible {
+            max-height: 100px; /* Adjust based on content height */
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        /* Add CSS to support the mobile dropdown dynamic change */
+        .dropdown-menu.open {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-   <nav>
-    <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li class="dropdown">
-        <a href="javascript:void(0);" onclick="toggleDropdown()">More ▾</a>
-        <ul class="dropdown-menu">
-            <li><a href="honours.html">Honours and Awards</a></li>
-            <li><a href="links.html">Useful Links</a></li>
-        </ul>
-        </li>
-    </ul>
-    </nav>
-
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown()">More ▾</a>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="honours.html">Honours and Awards</a></li>
+                        <li><a href="links.html">Useful Links</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
         <header>
             <div class="profile-photo">
@@ -31,36 +50,34 @@
             </div>
             <h1>Alana Deng</h1>
             <p>Bioinformatics | Health Data Science</p>
-
         </header>
 
         <section class="about">
             <h2>About Me</h2>
             <p>
-                Hello gorgeous! I'm Alana and I'm starting in September 2025 as a PhD student in Statistics at 
+                Hello gorgeous! I'm Alana, and I'm currently a PhD student in Statistics at 
                 <a href="https://www.sfu.ca/stat-actsci.html" target="_blank">Simon Fraser University</a>, 
                 in the <a href="https://www.sfu.ca/stat-actsci.html" target="_blank">Department of Statistics and Actuarial Science</a>. 
-                I am currently pursuing my Master’s degree in Computer Science from 
-                <a href="https://www.uwo.ca/" target="_blank">Western University</a>, and previously worked as a research intern in the 
-                <a href="https://www.uvic.ca/science/math-statistics/" target="_blank">Department of Mathematics and Statistics</a> at the 
-                <a href="https://www.uvic.ca/" target="_blank">University of Victoria</a>.
+                Before SFU, I was in <a href="https://www.uwo.ca/" target="_blank">Western University</a> for my MSc in Computer Science, and I had also worked as a research intern in the 
+                <a href="https://www.uvic.ca/science/math-statistics/" target="_blank">Department of Mathematics and Statistics</a> at the <a href="https://www.uvic.ca/" target="_blank">University of Victoria</a>.
             </p>
             <p>
-                I'm passionate about developing computational tools that support real-world decisions in health and medicine. 
-                My research explores representation learning and interaction prediction within complex biological networks.
+                I'm passionate about developing computational tools that support real-world decisions, particularly in healthcare and medicine. 
+                My research explores representation learning and interaction prediction within complex biological networks and signals.
             </p>
             <p>
-                Outside of research, I enjoy climbing, golfing, short hikes, cooking, musical theatres, traveling 
-                (Victoria, BC is my all-time favorite spot — never gets old), and just about anything Disney (see background for my fav characters).
+                Outside of school and work, I enjoy musical theatre, climbing, short hikes, cooking, musical theatres, traveling 
+                (Victoria, BC is definitely my all-time favorite spot), and just about anything Disney.
             </p>
         </section>
 
         <section class="contact">
             <h2>Contact</h2>
-            <p><img src="assets/email.png" alt="Email" class="icon" /> <a href="mailto:alana_deng@sfu.ca">alana_deng@sfu.ca</a></p>
-            <p><img src="assets/linkedin.png" alt="LinkedIn" class="icon" /> <a href="https://www.linkedin.com/in/alana-deng/" target="_blank">LinkedIn</a></p>
-            <button onclick="showContact()">Contact Me</button>
-            <p id="contact-info" style="display:none;">📧 alana_deng@sfu.ca</p>
+            <button onclick="showContact()">Show Contact Details</button>
+            <div id="contact-info">
+                <p><img src="assets/email.png" alt="Email" class="icon" /> <a href="mailto:alana_deng@sfu.ca">alana_deng@sfu.ca</a></p>
+                <p><img src="assets/linkedin.png" alt="LinkedIn" class="icon" /> <a href="https://www.linkedin.com/in/alana-deng/" target="_blank">LinkedIn</a></p>
+            </div>
         </section>
     </div>
     <script src="script.js"></script>

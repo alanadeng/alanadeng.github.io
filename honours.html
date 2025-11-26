@@ -6,6 +6,13 @@
   <title>Honours and Awards - Alana Deng</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ADDED CSS to support the mobile dropdown dynamic change from script.js */
+    .dropdown-menu.open {
+        display: block;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -16,8 +23,8 @@
         <li><a href="projects.html">Projects</a></li>
         <li class="dropdown">
           <a href="javascript:void(0);" onclick="toggleDropdown()">More ▾</a>
-
-          <ul class="dropdown-menu">
+          
+          <ul class="dropdown-menu" id="dropdownMenu">
             <li><a href="honours.html">Honours and Awards</a></li>
             <li><a href="links.html">Useful Links</a></li>
           </ul>
@@ -53,5 +60,6 @@
       </div>
     </section>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

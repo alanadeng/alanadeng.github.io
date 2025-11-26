@@ -6,6 +6,13 @@
     <title>Courses - Alana Deng</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add CSS to support the mobile dropdown dynamic change */
+        .dropdown-menu.open {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="container"> 
@@ -16,7 +23,7 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li class="dropdown">
                 <a href="javascript:void(0);" onclick="toggleDropdown()">More ▾</a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="dropdownMenu">
                     <li><a href="honours.html">Honours and Awards</a></li>
                     <li><a href="links.html">Useful Links</a></li>
                 </ul>
@@ -27,30 +34,40 @@
             <h1>Courses</h1>
         </header>
             <section class="ta-experience">
-            <p>I worked as a teaching assistant at both Western University and Simon Fraser University. Below are some of the courses I TAed:</p>
+            <p>I've worked as a teaching assistant at both Western University and Simon Fraser University. Below are some of the courses I'd TAed for:</p>
+            <br>
+            
+            <div class="course-box">
+                <h3><a href="https://www.sfu.ca/outlines.html?2025/fall/stat/342/d100" target="_blank">SFU STAT 342 D100 – Introduction to Statistical Computing and Exploratory Data Analysis - SAS (2)</a></h3>
+                <p>Introduces the SAS statistical package. Data management; reading, editing and storing statistical data; data exploration and representation; summarizing data with tables, graphs and other statistical tools; and data simulation. </p>
+            </div>
+
+
+            <div class="course-box">
+                <h3><a href="https://www.csd.uwo.ca/misc/outlines/2024-Winter/CS3340B.pdf" target="_blank">UWO CS3340 - Analysis of Algorithms I</a></h3>
+                <p>This course focuses on the design and analysis of algorithms and data structures, emphasizing the logical reasoning behind algorithm development over rote implementation. Students will explore computational thinking and learn techniques to evaluate algorithm performance, highlighting that Computer Science is fundamentally about problem-solving, not just following procedures.</p>
+
+            </div>
+
+
+            <div class="course-box">
+                <h3><a href="https://www.csd.uwo.ca/misc/outlines/2024-Fall/CS_3331A_FW24.pdf" target="_blank">UWO CS3331 – Foundations of Computer Science</a></h3>
+                <p>This course explores core computational models and their capabilities, including finite state machines, regular expressions, push-down automata, and context-free grammars. A key part of the course involves studying the boundaries of computation through powerful abstractions like Turing machines. Some problems are solvable in principle but require impractical amounts of time, while others are unsolvable regardless of computational power. By examining these limits, this course provides a deeper understanding of what computers can- and cannot-do.</p>
+            </div>
+
+                      <div class="course-box">
+                <h3><a href="https://www.csd.uwo.ca/misc/outlines/2023-Winter/CS1027-b.pdf" target="_blank">UWO CS1027 – Computer Science Fundamentals II</a></h3>
+                <p>This course explores data organization and manipulation, object-oriented programming in Java, and the implementation of abstract data types. Topics include lists, stacks, queues, trees, recursion, and file and memory organization. </p>
+            </div>
+
 
             <div class="course-box">
                 <h3><a href="https://csd.uwo.ca/misc/outlines/2023-Fall/CS-1026A.pdf" target="_blank">UWO CS1026 – Introduction to Computer Science</a></h3>
                 <p>This course introduces fundamental programming concepts and design using Python, with no prior experience required. Topics include data types, variables, control structures, functions, basic data structures (lists, tuples, sets, dictionaries), objects and classes, modular design, and problem-solving strategies. Examples and assignments span various disciplines to build practical programming skills. </p>
             </div>
 
-            <div class="course-box">
-                <h3><a href="https://www.csd.uwo.ca/misc/outlines/2023-Winter/CS1027-b.pdf" target="_blank">UWO CS1027 – Computer Science Fundamentals II</a></h3>
-                <p>This course explores data organization and manipulation, object-oriented programming in Java, and the implementation of abstract data types. Topics include lists, stacks, queues, trees, recursion, and file and memory organization. </p>
-
-            <div class="course-box">
-                <h3><a href="https://www.csd.uwo.ca/misc/outlines/2024-Fall/CS_3331A_FW24.pdf" target="_blank">UWO CS3331– Foundations of Computer Science</a></h3>
-                <p>This course explores core computational models and their capabilities, including finite state machines, regular expressions, push-down automata, and context-free grammars. A key part of the course involves studying the boundaries of computation through powerful abstractions like Turing machines. Some problems are solvable in principle but require impractical amounts of time, while others are unsolvable regardless of computational power. By examining these limits, this course provides a deeper understanding of what computers can- and cannot-do.</p>
-
-
-            <div class="course-box">
-                <h3><a href="https://www.csd.uwo.ca/misc/outlines/2024-Winter/CS3340B.pdf" target="_blank">UWO CS3340– Analysis of Algorithms I</a></h3>
-                <p>This course focuses on the design and analysis of algorithms and data structures, emphasizing the logical reasoning behind algorithm development over rote implementation. Students will explore computational thinking and learn techniques to evaluate algorithm performance, highlighting that Computer Science is fundamentally about problem-solving, not just following procedures.</p>
-
-            </div>
-
             </section>
-
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

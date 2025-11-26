@@ -6,9 +6,13 @@
   <title>Projects - Alana Deng</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Styling for project-box is now mostly handled in style.css, but keep here if needed for overrides */
+    /* Updated styles for consistency and aesthetics, but should largely match global CSS */
     .project-box {
-      background-color: white;
+      background-color: var(--background-light); /* Use CSS Variable for consistency */
+      border-left: 5px solid var(--secondary-color);
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 2rem;
@@ -27,12 +31,17 @@
     }
 
     .project-box a {
-      color: #f987c0;
+      color: var(--primary-color);
       text-decoration: none;
     }
 
     .project-box a:hover {
       text-decoration: underline;
+    }
+    
+    /* Add CSS to support the mobile dropdown dynamic change */
+    .dropdown-menu.open {
+        display: block;
     }
   </style>
 </head>
@@ -46,7 +55,7 @@
         <li><a href="projects.html">Projects</a></li>
         <li class="dropdown">
         <a href="javascript:void(0);" onclick="toggleDropdown()">More ▾</a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" id="dropdownMenu">
             <li><a href="honours.html">Honours and Awards</a></li>
             <li><a href="links.html">Useful Links</a></li>
         </ul>
@@ -59,7 +68,8 @@
     </header>
 
     <section class="project-list">
-      <p>I worked on several research and machine learning projects during my studies and internships. Selected projects are listed below:</p>
+      <p>I've worked on several research and machine learning projects during my studies and internships. Selected projects are listed below:</p>
+      <br>
 
       <div class="project-box">
         <h3><a href="https://www.nature.com/articles/s41467-025-57536-9" target="_blank">GraphBAN: An Inductive Graph-Based Approach for Compound-Protein Interaction Prediction</a></h3>
@@ -79,5 +89,6 @@
       </div>
     </section>
   </div>
+    <script src="script.js"></script>
 </body>
 </html>
