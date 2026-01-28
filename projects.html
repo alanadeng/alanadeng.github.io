@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Alana Deng</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Styling for project-box is now mostly handled in style.css, but keep here if needed for overrides */
+    /* Updated styles for consistency and aesthetics, but should largely match global CSS */
+    .project-box {
+      background-color: var(--background-light); /* Use CSS Variable for consistency */
+      border-left: 5px solid var(--secondary-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-box h3 {
+      margin-top: 0;
+    }
+
+    .project-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .project-box a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .project-box a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Add CSS to support the mobile dropdown dynamic change */
+    .dropdown-menu.open {
+        display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+   <nav>
+    <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li class="dropdown">
+        <a href="javascript:void(0);" onclick="toggleDropdown()">More ▾</a>
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="honours.html">Honours and Awards</a></li>
+            <li><a href="links.html">Useful Links</a></li>
+        </ul>
+        </li>
+    </ul>
+    </nav>
+
+    <header>
+      <h1>Projects</h1>
+    </header>
+
+    <section class="project-list">
+      <p>I've worked on several research and machine learning projects during my studies and internships. Selected projects are listed below:</p>
+      <br>
+
+      <div class="project-box">
+        <h3><a href="https://www.nature.com/articles/s41467-025-57536-9" target="_blank">GraphBAN: An Inductive Graph-Based Approach for Compound-Protein Interaction Prediction</a></h3>
+        <img src="assets/graphban.png" alt="GraphBAN workflow" />
+        <p>Understanding compound-protein interactions is key to early drug discovery. We present GraphBAN, a graph-based framework for inductive prediction of these interactions using compound and protein features. Unlike traditional models, GraphBAN generalizes to entirely unseen compounds and proteins. It uses a teacher-student knowledge distillation architecture, where the teacher leverages network structure and the student learns from node attributes, and includes a domain adaptation module for cross-dataset generalization. Experiments on five benchmarks show GraphBAN outperforms ten baselines, with a case study on the Pin1 protein highlighting its real-world potential.</p>
+      </div>
+
+      <div class="project-box">
+        <h3><a href="https://academic.oup.com/bioinformaticsadvances/article/4/1/vbae108/7723597" target="_blank">Investigating Alignment-Free Machine Learning for HIV-1 Subtype Classification</a></h3>
+        <img src="assets/hiv.jpeg" alt="HIV subtype classification" />
+        <p>HIV-1 subtype classification is critical for effective infection management, but traditional alignment-based methods are slow and impractical for large datasets. Alignment-free approaches, which use numerical representations and machine learning, offer scalability but often underperform on rare subtypes. We present a comprehensive analysis of sequence vectorization techniques, including k-mer and Word2Vec embeddings. A k-mer-based XGBoost model achieved a balanced accuracy of 0.84, while a Word2Vec-based SVM showed strong precision. Our findings highlight the potential of natural language-inspired methods to improve subtype classification and support the development of subtype-specific treatments.</p>
+      </div>
+
+      <div class="project-box">
+        <h3><a href="https://www.mitacs.ca/" target="_blank">Application of Machine Learning Tools for Survival Data</a></h3>
+        <p>This project applies machine learning to survival analysis, which models the time until an event such as death or disease recurrence. A major challenge in this field is censored data, where the event has not occurred by the end of the study. We explore the Accelerated Failure Time (AFT) model, which directly relates covariates to survival time by modeling how they speed up or slow down the event. In addition, we evaluate machine learning methods that can handle complex, nonlinear patterns in censored data. By comparing these models, the project aims to improve the accuracy and flexibility of survival predictions.</p>
+      </div>
+    </section>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
